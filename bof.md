@@ -1,5 +1,5 @@
-Dreamhack - bof
-Author : velix
+# Dreamhack - bof
+**Author :** Dandelion
 
 ###################
 ### 1. Analysis ###
